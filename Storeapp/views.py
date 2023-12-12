@@ -6,4 +6,4 @@ def index(request):
         "name": "Popescu",
         "address": "Timisoara, Parcul Rozelor"
     }
-    return render(request, "index.html", template_model)
+    return render(request, "home/index.html", template_model)
