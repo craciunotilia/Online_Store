@@ -20,7 +20,7 @@
           rel="stylesheet">
     <!-- script
     ================================================== -->
-    <script src="js/modernizr.js"></script>
+    <script src="{% static 'js/modernizr.js' %}"></script>
 </head>
 <body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true"
       tabindex="0">
@@ -147,8 +147,8 @@
 <header id="header" class="site-header header-scrolled position-fixed text-black bg-light">
     <nav id="header-nav" class="navbar navbar-expand-lg px-3 mb-3">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.html"> <!--{% url ' home' %}-->
-                <img src="images/main-logo.png" class="logo">
+            <a class="navbar-brand" href="index.html">
+                <img src="{% static 'images/main-logo.png' %}" class="logo">
             </a>
             <button class="navbar-toggler d-flex d-lg-none order-3 p-2" type="button" data-bs-toggle="offcanvas"
                     data-bs-target="#bdNavbar" aria-controls="bdNavbar" aria-expanded="false"
@@ -160,7 +160,7 @@
             <div class="offcanvas offcanvas-end" tabindex="-1" id="bdNavbar" aria-labelledby="bdNavbarOffcanvasLabel">
                 <div class="offcanvas-header px-4 pb-0">
                     <a class="navbar-brand" href="index.html">
-                        <img src="images/main-logo.png" class="logo">
+                        <img src="{% static 'images/main-logo.png' %}" class="logo">
                     </a>
                     <button type="button" class="btn-close btn-close-black" data-bs-dismiss="offcanvas"
                             aria-label="Close" data-bs-target="#bdNavbar"></button>
@@ -207,7 +207,7 @@
                                 </li>
                                 <li>
                                     <a href="single-post.html" class="dropdown-item">Single Post</a>
-                                    <!- {% url 'single-post' %}- -->
+
                                 </li>
                                 <li>
                                     <a href="single-product.html" class="dropdown-item">Single Product</a>
@@ -265,7 +265,7 @@
                         </div>
                         <div class="col-md-5">
                             <div class="image-holder">
-                                <img src="images/banner-image.png" alt="banner">
+                                <img src="{% static 'images/banner-image.png' %}" alt="banner">
                             </div>
                         </div>
                     </div>
@@ -283,7 +283,7 @@
                         </div>
                         <div class="col-md-5">
                             <div class="image-holder">
-                                <img src="images/banner-image.png" alt="banner">
+                                <img src="{% static 'images/banner-image.png' %}" alt="banner">
                             </div>
                         </div>
                     </div>
@@ -374,7 +374,7 @@
                     <div class="swiper-slide">
                         <div class="product-card position-relative">
                             <div class="image-holder">
-                                <img src="images/product-item1.jpg" alt="product-item" class="img-fluid">
+                                <img src="{% static 'images/product-item1.jpg' %}" alt="product-item" class="img-fluid">
                             </div>
                             <div class="cart-concern position-absolute">
                                 <div class="cart-button d-flex">
@@ -396,7 +396,7 @@
                     <div class="swiper-slide">
                         <div class="product-card position-relative">
                             <div class="image-holder">
-                                <img src="images/product-item2.jpg" alt="product-item" class="img-fluid">
+                                <img src="{% static 'images/product-item2.jpg' %}" alt="product-item" class="img-fluid">
                             </div>
                             <div class="cart-concern position-absolute">
                                 <div class="cart-button d-flex">
@@ -418,7 +418,7 @@
                     <div class="swiper-slide">
                         <div class="product-card position-relative">
                             <div class="image-holder">
-                                <img src="images/product-item3.jpg" alt="product-item" class="img-fluid">
+                                <img src="{% static 'images/product-item3.jpg' %}" alt="product-item" class="img-fluid">
                             </div>
                             <div class="cart-concern position-absolute">
                                 <div class="cart-button d-flex">
@@ -440,7 +440,7 @@
                     <div class="swiper-slide">
                         <div class="product-card position-relative">
                             <div class="image-holder">
-                                <img src="images/product-item4.jpg" alt="product-item" class="img-fluid">
+                                <img src="{% static 'images/product-item4.jpg'%}" alt="product-item" class="img-fluid">
                             </div>
                             <div class="cart-concern position-absolute">
                                 <div class="cart-button d-flex">
@@ -462,7 +462,7 @@
                     <div class="swiper-slide">
                         <div class="product-card position-relative">
                             <div class="image-holder">
-                                <img src="images/product-item5.jpg" alt="product-item" class="img-fluid">
+                                <img src="{% static 'images/product-item5.jpg' %}" alt="product-item" class="img-fluid">
                             </div>
                             <div class="cart-concern position-absolute">
                                 <div class="cart-button d-flex">
@@ -501,7 +501,7 @@
                     <div class="swiper-slide">
                         <div class="product-card position-relative">
                             <div class="image-holder">
-                                <img src="images/product-item6.jpg" alt="product-item" class="img-fluid">
+                                <img src="{% static 'images/product-item6.jpg' %}" alt="product-item" class="img-fluid">
                             </div>
                             <div class="cart-concern position-absolute">
                                 <div class="cart-button d-flex">
@@ -523,7 +523,7 @@
                     <div class="swiper-slide">
                         <div class="product-card position-relative">
                             <div class="image-holder">
-                                <img src="images/product-item7.jpg" alt="product-item" class="img-fluid">
+                                <img src="{% static 'images/product-item7.jpg' %}" alt="product-item" class="img-fluid">
                             </div>
                             <div class="cart-concern position-absolute">
                                 <div class="cart-button d-flex">
@@ -545,7 +545,7 @@
                     <div class="swiper-slide">
                         <div class="product-card position-relative">
                             <div class="image-holder">
-                                <img src="images/product-item8.jpg" alt="product-item" class="img-fluid">
+                                <img src="{% static 'images/product-item8.jpg' %}" alt="product-item" class="img-fluid">
                             </div>
                             <div class="cart-concern position-absolute">
                                 <div class="cart-button d-flex">
@@ -567,7 +567,7 @@
                     <div class="swiper-slide">
                         <div class="product-card position-relative">
                             <div class="image-holder">
-                                <img src="images/product-item9.jpg" alt="product-item" class="img-fluid">
+                                <img src="{% static 'images/product-item9.jpg' %}" alt="product-item" class="img-fluid">
                             </div>
                             <div class="cart-concern position-absolute">
                                 <div class="cart-button d-flex">
@@ -589,7 +589,7 @@
                     <div class="swiper-slide">
                         <div class="product-card position-relative">
                             <div class="image-holder">
-                                <img src="images/product-item10.jpg" alt="product-item" class="img-fluid">
+                                <img src="{% static 'images/product-item10.jpg' %}" alt="product-item" class="img-fluid">
                             </div>
                             <div class="cart-concern position-absolute">
                                 <div class="cart-button d-flex">
@@ -615,7 +615,7 @@
     <div class="swiper-pagination position-absolute text-center"></div>
 </section>
 <section id="yearly-sale" class="bg-light-blue overflow-hidden mt-5 padding-xlarge"
-         style="background-image: url('images/single-image1.png');background-position: right; background-repeat: no-repeat;">
+         style="background-image: url("{% static 'images/single-image1.png' %}" );background-position: right; background-repeat: no-repeat;">
     <div class="row d-flex flex-wrap align-items-center">
         <div class="col-md-6 col-sm-12">
             <div class="text-content offset-4 padding-medium">
@@ -642,7 +642,7 @@
                 <div class="col-lg-4 col-sm-12">
                     <div class="card border-none me-3">
                         <div class="card-image">
-                            <img src="images/post-item1.jpg" alt="" class="img-fluid">
+                            <img src="{% static 'images/post-item1.jpg' %}" alt="" class="img-fluid">
                         </div>
                     </div>
                     <div class="card-body text-uppercase">
@@ -658,7 +658,7 @@
                 <div class="col-lg-4 col-sm-12">
                     <div class="card border-none me-3">
                         <div class="card-image">
-                            <img src="images/post-item2.jpg" alt="" class="img-fluid">
+                            <img src="{% static 'images/post-item2.jpg' %}" alt="" class="img-fluid">
                         </div>
                     </div>
                     <div class="card-body text-uppercase">
@@ -674,7 +674,7 @@
                 <div class="col-lg-4 col-sm-12">
                     <div class="card border-none me-3">
                         <div class="card-image">
-                            <img src="images/post-item3.jpg" alt="" class="img-fluid">
+                            <img src="{% static 'images/post-item3.jpg' %}" alt="" class="img-fluid">
                         </div>
                     </div>
                     <div class="card-body text-uppercase">
@@ -811,7 +811,7 @@
             <div class="d-flex flex-wrap">
                 <figure class="instagram-item pe-2">
                     <a href="https://templatesjungle.com/" class="image-link position-relative">
-                        <img src="images/insta-item1.jpg" alt="instagram" class="insta-image">
+                        <img src="{% static 'images/insta-item1.jpg' %}" alt="instagram" class="insta-image">
                         <div class="icon-overlay position-absolute d-flex justify-content-center">
                             <svg class="instagram">
                                 <use xlink:href="#instagram"></use>
@@ -821,7 +821,7 @@
                 </figure>
                 <figure class="instagram-item pe-2">
                     <a href="https://templatesjungle.com/" class="image-link position-relative">
-                        <img src="images/insta-item2.jpg" alt="instagram" class="insta-image">
+                        <img src="{% static 'images/insta-item2.jpg' %}" alt="instagram" class="insta-image">
                         <div class="icon-overlay position-absolute d-flex justify-content-center">
                             <svg class="instagram">
                                 <use xlink:href="#instagram"></use>
@@ -831,7 +831,7 @@
                 </figure>
                 <figure class="instagram-item pe-2">
                     <a href="https://templatesjungle.com/" class="image-link position-relative">
-                        <img src="images/insta-item3.jpg" alt="instagram" class="insta-image">
+                        <img src="{% static 'images/insta-item3.jpg' %}" alt="instagram" class="insta-image">
                         <div class="icon-overlay position-absolute d-flex justify-content-center">
                             <svg class="instagram">
                                 <use xlink:href="#instagram"></use>
@@ -841,7 +841,7 @@
                 </figure>
                 <figure class="instagram-item pe-2">
                     <a href="https://templatesjungle.com/" class="image-link position-relative">
-                        <img src="images/insta-item4.jpg" alt="instagram" class="insta-image">
+                        <img src="{% static 'images/insta-item4.jpg' %}" alt="instagram" class="insta-image">
                         <div class="icon-overlay position-absolute d-flex justify-content-center">
                             <svg class="instagram">
                                 <use xlink:href="#instagram"></use>
@@ -851,7 +851,7 @@
                 </figure>
                 <figure class="instagram-item pe-2">
                     <a href="https://templatesjungle.com/" class="image-link position-relative">
-                        <img src="images/insta-item5.jpg" alt="instagram" class="insta-image">
+                        <img src="{% static 'images/insta-item5.jpg' %}" alt="instagram" class="insta-image">
                         <div class="icon-overlay position-absolute d-flex justify-content-center">
                             <svg class="instagram">
                                 <use xlink:href="#instagram"></use>
@@ -870,7 +870,7 @@
                 <div class="row d-flex flex-wrap justify-content-between">
                     <div class="col-lg-3 col-sm-6 pb-3">
                         <div class="footer-menu">
-                            <img src="images/main-logo.png" alt="logo">
+                            <img src="{% static 'images/main-logo.png' %}" alt="logo">
                             <p>Nisi, purus vitae, ultrices nunc. Sit ac sit suscipit hendrerit. Gravida massa volutpat
                                 aenean odio erat nullam fringilla.</p>
                             <div class="social-links">
@@ -980,8 +980,8 @@
                 <div class="Shipping d-flex">
                     <p>We ship with:</p>
                     <div class="card-wrap ps-2">
-                        <img src="images/dhl.png" alt="visa">
-                        <img src="images/shippingcard.png" alt="mastercard">
+                        <img src="{% static 'images/dhl.png' %}" alt="visa">
+                        <img src="{% static 'images/shippingcard.png' %}" alt="mastercard">
                     </div>
                 </div>
             </div>
@@ -989,9 +989,9 @@
                 <div class="payment-method d-flex">
                     <p>Payment options:</p>
                     <div class="card-wrap ps-2">
-                        <img src="images/visa.jpg" alt="visa">
-                        <img src="images/mastercard.jpg" alt="mastercard">
-                        <img src="images/paypal.jpg" alt="paypal">
+                        <img src="{% static 'images/visa.jpg'%}" alt="visa">
+                        <img src="{% static 'images/mastercard.jpg' %}" alt="mastercard">
+                        <img src="{% static 'images/paypal.jpg' %}" alt="paypal">
                     </div>
                 </div>
             </div>
