@@ -1,0 +1,16 @@
+<!-- card_form.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Introducere Date Card</title>
+</head>
+<body>
+    <h1>Introducere Date Card</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Trimite</button>
+    </form>
+</body>
+</html>

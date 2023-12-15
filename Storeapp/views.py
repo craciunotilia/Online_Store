@@ -3,6 +3,9 @@ from django.shortcuts import render, get_object_or_404
 from django.template import loader
 from .models import Product, ShoppingCartItem
 from django.contrib.auth.decorators import login_required
+from django.shortcuts import render, redirect
+from .forms import CardDataForm
+
 
 
 def storeapp(request):
@@ -61,3 +64,33 @@ from django.shortcuts import render
 def cart_view(request):
     # Logica pentru afișarea coșului de cumpărături
     return render(request, 'cart.html')
+
+
+def card_data_view(request):
+    if request.method == 'POST':
+        form = CardDataForm(request.POST)
+        if form.is_valid():
+            form.save()  # Salvează datele cardului în baza de date
+            # Poți adăuga logica de procesare a plății aici
+            return render(request, 'payment_success.html')
+    else:
+        form = CardDataForm()
+
+    return render(request, 'card_form.html', {'form': form})
+
+
+from django.shortcuts import render
+from .forms import CardDataForm
+
+
+def card_data_view(request):
+    if request.method == 'POST':
+        form = CardDataForm(request.POST)
+        if form.is_valid():
+            form.save()  # Salvează datele cardului în baza de date
+            # Poți adăuga logica de procesare a plății aici
+            return render(request, 'payment_success.html')  # Afișează pagina de succes
+    else:
+        form = CardDataForm()
+
+    return render(request, 'card_form.html', {'form': form})  # Afișează formularul de introducere a datelor cardului

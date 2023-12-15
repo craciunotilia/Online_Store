@@ -27,3 +27,15 @@ class ShoppingCartItem(models.Model):
 
     def __str__(self):
         return f"{self.quantity} x {self.product.name} - {self.user.username}"
+
+
+class CardData(models.Model):
+    card_number = models.CharField(max_length=16)
+    card_owner = models.CharField(max_length=100)
+    cvv_code = models.CharField(max_length=4)
+    year_expiration = models.IntegerField()
+    month_expiration = models.IntegerField()
+
+    def __str__(self):
+        return f"Card: {self.card_number} - Owner: {self.card_owner}"
+
