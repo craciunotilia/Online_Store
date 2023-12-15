@@ -1,0 +1,8 @@
+<!-- product_list.html -->
+{% for product in products %}
+    <div>
+        <h3>{{ product.name }}</h3>
+        <p>Price: ${{ product.price }}</p>
+        <button onclick="addToCart({{ product.id }})">Add to Cart</button>
+    </div>
+{% endfor %}

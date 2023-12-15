@@ -1,8 +1,19 @@
-from django.urls import path
 from . import views
+from django.urls import path
+from .views import home, storeapp, product_list, view_cart, add_to_cart
 
 urlpatterns = [
-    path('', views.home, name='home'),
-    path('', views.storeapp, name='home'),
-    # Add more patterns as needed
+    path('', home, name='home'),
+    path('store/', storeapp, name='storeapp'),
+    path('products/', product_list, name='product_list'),
+    path('view_cart/', view_cart, name='view_cart'),
+    path('add_to_cart/', add_to_cart, name='add_to_cart'),
+    path('cart/', views.cart_view, name='cart_view'),
 ]
+
+
+
+
+
+
+

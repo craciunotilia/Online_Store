@@ -1,0 +1,7 @@
+<!-- view_cart.html -->
+{% for product in products_in_cart %}
+    <div>
+        <h3>{{ product.name }}</h3>
+        <p>Price: ${{ product.price }}</p>
+    </div>
+{% endfor %}

@@ -1,0 +1,41 @@
+<!-- templates/storeapp/checkout.html -->
+<script src="https://js.stripe.com/v3/"></script>
+<form id="payment-form">
+  <div id="card-element"></div>
+  <button id="submit">Pay</button>
+  <div id="error-message"></div>
+</form>
+
+<script>
+  var stripe = Stripe('{{ STRIPE_PUBLIC_KEY }}');
+  var elements = stripe.elements();
+  var cardElement = elements.create('card');
+
+  cardElement.mount('#card-element');
+
+  var form = document.getElementById('payment-form');
+  var submitButton = document.getElementById('submit');
+  var errorMessage = document.getElementById('error-message');
+
+  form.addEventListener('submit', function(ev) {
+    ev.preventDefault();
+    submitButton.disabled = true;
+
+    stripe.confirmCardPayment(
+      '{{ client_secret }}',
+      {
+        payment_method: {
+          card: cardElement,
+        },
+      }
+    ).then(function(result) {
+      if (result.error) {
+        errorMessage.textContent = result.error.message;
+        submitButton.disabled = false;
+      } else {
+        // Plata a fost efectuată cu succes, poți actualiza starea comenzii sau redirecționa către o pagină de confirmare
+        window.location.href = '{% url "order_confirmation" %}';
+      }
+    });
+  });
+</script>
