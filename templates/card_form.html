@@ -9,7 +9,7 @@
 </head>
 <body>
     <h1>Introducere Date Card</h1>
-    <form method="post" action="destinatie_procesare.php"> <!-- Modifică 'destinatie_procesare.php' cu scriptul tău de procesare -->
+    <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit">Trimite</button>
