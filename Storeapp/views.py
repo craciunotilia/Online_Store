@@ -5,6 +5,17 @@ from .models import Product, ShoppingCartItem
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from .forms import CardDataForm
+from django.shortcuts import render
+
+def about_view(request):
+    # Logica pentru vizualizarea paginii "About Us"
+    return render(request, 'about.html')
+
+
+
+
+
+
 
 
 
