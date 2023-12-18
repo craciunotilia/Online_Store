@@ -14,7 +14,7 @@ class Product(models.Model):
 # class CardData(models.Model):
 #
 #  card_number =
-#     card_owener=
+#     card_owner=
 #     cvv_code =
 #     year_expiration =
 #     month_expiration  =

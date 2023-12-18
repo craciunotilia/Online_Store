@@ -72,6 +72,7 @@ def remove_from_cart(request, item_id):
 # În Storeapp/views.py
 from django.shortcuts import render
 
+@login_required
 def cart_view(request):
     # Logica pentru afișarea coșului de cumpărături
     return render(request, 'cart.html')

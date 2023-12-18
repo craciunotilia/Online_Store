@@ -1,18 +1,99 @@
-<!-- about.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4; /* Light grey background */
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        header {
+            background: #d3d3d3; /* Light grey header */
+            color: #333;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #bbb 1px solid;
+        }
+
+        header a {
+            color: #333; /* Darker text for contrast */
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+
+        header ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            overflow: hidden;
+        }
+
+        header li {
+            float: left;
+            display: inline;
+            padding: 0 20px 0 20px;
+        }
+
+        header #branding {
+            float: left;
+        }
+
+        header #branding h1 {
+            margin: 0;
+        }
+
+        header nav {
+            float: right;
+            margin-top: 10px;
+        }
+
+        header .highlight, header .current a {
+            color: #e8491d; /* Highlight color */
+            font-weight: bold;
+        }
+
+        header a:hover {
+            color: #666666; /* Dark grey on hover */
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
 
-    <h1>About Us</h1>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1><span class="highlight">Our</span> Online Store</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li class="current"><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-    <p>Bine ați venit la magazinul nostru online! Suntem dedicați să vă oferim cele mai bune produse și servicii.</p>
-
-
+    <div class="container">
+        <h1>About Us</h1>
+        <p>Bine ați venit la magazinul nostru online! Suntem dedicați să vă oferim cele mai bune produse și servicii.
+        Înființat in 2023, magazinul nostru se axeaza pe o gama largă de produse de telefonie si gadget-uri.</p>
+    </div>
 
 </body>
 </html>
