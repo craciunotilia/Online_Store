@@ -3,11 +3,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8"> <!-- Setează codificarea de caractere pentru pagina web -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Asigură o afișare corectă pe dispozitive mobile -->
     <title>Introducere Date Card</title>
 </head>
 <body>
     <h1>Introducere Date Card</h1>
-    <form method="post">
+    <form method="post" action="destinatie_procesare.php"> <!-- Modifică 'destinatie_procesare.php' cu scriptul tău de procesare -->
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit">Trimite</button>
