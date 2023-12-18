@@ -20,6 +20,10 @@ AUTHENTICATION_BACKENDS = [
 LOGIN_REDIRECT_URL = 'store/'
 LOGOUT_REDIRECT_URL = 'login/'
 
+SESSION_EXPIRE_AT_BROWSER_CLOSE = False
+SESSION_COOKIE_AGE = 650000
+
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
