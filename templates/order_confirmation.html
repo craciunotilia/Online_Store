@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmare Comandă</title>
+</head>
+<body>
+    <h1>Confirmare Comandă</h1>
+
+    <p>Mulțumim pentru comanda ta! Comanda ta a fost procesată cu succes.</p>
+
+    <!-- Afișează detalii despre comandă -->
+    <h2>Detalii Comandă</h2>
+    <p>Număr Comandă: {{ order.number }}</p>
+
+    <h3>Produse:</h3>
+    <ul>
+        {% for item in order.items %}
+            <li>{{ item.product.name }} - Cantitate: {{ item.quantity }} - Preț: {{ item.product.price }}</li>
+        {% endfor %}
+    </ul>
+
+    <p>Suma Totală: {{ order.total_amount }}</p>
+
+    <!-- Alte informații sau link-uri pot fi adăugate aici -->
+
+    <p>Mulțumim că ai cumpărat de la noi!</p>
+</body>
+</html>

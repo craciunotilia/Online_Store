@@ -1,13 +1,15 @@
-<!-- templates/storeapp/checkout.html -->
 <script src="https://js.stripe.com/v3/"></script>
+
 <form id="payment-form">
   <div id="card-element"></div>
   <button id="submit">Pay</button>
   <div id="error-message"></div>
 </form>
 
+<a href="{% url 'card_form' %}">Creează un card nou</a>
+
 <script>
-  var stripe = Stripe('{{ STRIPE_PUBLIC_KEY }}');
+  var stripe = Stripe('aici_cheia_dvs_publica_stripe');
   var elements = stripe.elements();
   var cardElement = elements.create('card');
 
@@ -22,7 +24,7 @@
     submitButton.disabled = true;
 
     stripe.confirmCardPayment(
-      '{{ client_secret }}',
+      'aici_client_secret',
       {
         payment_method: {
           card: cardElement,
@@ -35,7 +37,10 @@
       } else {
         // Plata a fost efectuată cu succes, poți actualiza starea comenzii sau redirecționa către o pagină de confirmare
         window.location.href = '{% url "order_confirmation" %}';
+
       }
     });
   });
 </script>
+
+

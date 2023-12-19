@@ -5,6 +5,8 @@ from .views import about_view
 from django.contrib.auth import views as auth_views
 from .views import blog_view
 from django.contrib.auth.views import LoginView, LogoutView
+from .views import shop_view
+from .views import checkout_view, order_confirmation_view
 
 urlpatterns = [
     path('', home, name='home'),
@@ -18,5 +20,12 @@ urlpatterns = [
     path('login/', auth_views.LoginView.as_view(template_name='login.html', next_page='home'), name='login'),
     path('logout/', auth_views.LogoutView.as_view(template_name='logout', next_page='home'), name='logout'),
     path('blog/', blog_view, name='blog_view'),
+    path('shop/', shop_view, name='shop_view'),
+    path('checkout/', checkout_view, name='checkout_view'),
+    path('order_confirmation/', order_confirmation_view, name='order_confirmation'),
+    path('add_to_cart/<int:product_id>/', add_to_cart, name='add_to_cart'),
+
+
+
 
 ]
