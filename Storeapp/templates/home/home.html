@@ -191,29 +191,29 @@
                                role="button" aria-expanded="false">Pages</a>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <a href="about.html" class="dropdown-item">About</a>
+                                    <a href="{% url 'about_view' %}" class="dropdown-item">About</a>
                                 </li>
                                 <li>
-                                    <a href="blog.html" class="dropdown-item">Blog</a>
+                                    <a href="{% url 'blog_view' %}" class="dropdown-item">Blog</a>
                                 </li>
                                 <li>
-                                    <a href="shop.html" class="dropdown-item">Shop</a>
+                                    <a href="{%  url 'product_list' %}" class="dropdown-item">Shop</a>
                                 </li>
                                 <li>
                                     <a href="{% url 'cart_view' %}" class="dropdown-item">Cart</a>
                                 </li>
                                 <li>
-                                    <a href="checkout.html" class="dropdown-item">Checkout</a>
+                                    <a href="{% url 'view_cart' %}" class="dropdown-item">Checkout</a>
                                 </li>
                                 <li>
-                                    <a href="single-post.html" class="dropdown-item">Single Post</a>
+                                    <a href="#" class="dropdown-item">Single Post</a>
 
                                 </li>
                                 <li>
-                                    <a href="single-product.html" class="dropdown-item">Single Product</a>
+                                    <a href="#" class="dropdown-item">Single Product</a>
                                 </li>
                                 <li>
-                                    <a href="contact.html" class="dropdown-item">Contact</a>
+                                    <a href="#" class="dropdown-item">Contact</a>
                                 </li>
                             </ul>
                         </li>

@@ -10,13 +10,13 @@ from django.shortcuts import render
 def about_view(request):
     # Logica pentru vizualizarea paginii "About Us"
     return render(request, 'about.html')
-
-
-
-
-
-
-
+def blog_view(request):
+    articles = [
+        {'title': 'Titlu articol 1', 'content': 'Conținut articol 1'},
+        {'title': 'Titlu articol 2', 'content': 'Conținut articol 2'},
+        # ... alte articole
+    ]
+    return render(request, 'blog.html', {'articles': articles})
 
 
 def storeapp(request):
