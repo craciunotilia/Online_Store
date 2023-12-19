@@ -106,3 +106,8 @@ def card_data_view(request):
         form = CardDataForm()
 
     return render(request, 'card_form.html', {'form': form})  # Afișează formularul de introducere a datelor cardului
+
+
+def shop_view(request):
+    # Logica pentru vizualizarea paginii "Shop"
+    return render(request, 'shop.html')
