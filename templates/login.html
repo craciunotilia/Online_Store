@@ -1,6 +1,75 @@
-<!-- registration/login.html -->
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Login</button>
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            perspective: 1000px; /* Added for 3D effect */
+        }
+
+        .container {
+            width: 80%;
+            max-width: 400px;
+            background: #fff;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            transform-style: preserve-3d; /* Preserve 3D for child elements */
+            transform: rotateX(10deg) rotateY(0deg); /* Symmetric rotation */
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .container:hover {
+            transform: rotateX(0deg) rotateY(0deg); /* Flatten on hover */
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center form elements */
+        }
+
+        form p, form button {
+            width: 100%; /* Full width for form elements */
+        }
+
+        form button {
+            cursor: pointer;
+            background: #333;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: background 0.3s, box-shadow 0.3s;
+        }
+
+        form button:hover {
+            background: #555;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</body>
+</html>
