@@ -8,6 +8,8 @@ from django.shortcuts import render, redirect
 from .forms import CardDataForm
 from django.shortcuts import render
 from django.db.models import Sum
+from .forms import ContactForm
+from .models import Product
 
 
 def about_view(request):
@@ -117,3 +119,17 @@ def checkout_view(request):
 def order_confirmation_view(request):
     # Logica pentru pagina de confirmare a comenzii
     return render(request, 'order_confirmation.html')
+
+
+def contact_view(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return render(request, 'contact_success.html')
+    else:
+        form = ContactForm()
+
+    return render(request, 'contact_form.html', {'form': form})
+
+

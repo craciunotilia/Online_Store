@@ -24,4 +24,12 @@ urlpatterns = [
     path('checkout/', checkout_view, name='checkout_view'),
     path('order_confirmation/', order_confirmation_view, name='order_confirmation'),
     path('add_to_cart/<int:product_id>/', add_to_cart, name='add_to_cart'),
+    path('contact/', views.contact_view, name='contact'),
+
 ]
+
+
+
+
+
+
