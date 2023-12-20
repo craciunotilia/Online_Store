@@ -82,7 +82,6 @@ from django.shortcuts import render
 def cart_view(request):
     cart_items = ShoppingCartItem.objects.filter(user=request.user)
     total = cart_items.aggregate(Sum('product__price'))['product__price__sum']
-
     return render(request, 'cart.html', {'cart_items': cart_items, 'total': total})
 
 
