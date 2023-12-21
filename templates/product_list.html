@@ -4,5 +4,6 @@
         <h3>{{ product.name }}</h3>
         <p>Price: ${{ product.price }}</p>
         <button onclick="addToCart({{ product.id }})">Add to Cart</button>
+        <button onclick="location.href='{% url 'add_to_cart' product.id %}'">Add to Cart</button>
     </div>
 {% endfor %}

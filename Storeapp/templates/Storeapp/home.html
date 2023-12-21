@@ -378,8 +378,11 @@
                             </div>
                             <div class="cart-concern position-absolute">
                                 <div class="cart-button d-flex">
-                                    <a href="#" class="btn btn-medium btn-black add-to-cart-button" data-product-id="1">Add to Cart</a>
-
+                                    <a href="#" class="btn btn-medium btn-black">Add to Cart
+                                        <svg class="cart-outline">
+                                            <use xlink:href="#cart-outline"></use>
+                                        </svg>
+                                    </a>
                                 </div>
                             </div>
                             <div class="card-detail d-flex justify-content-between align-items-baseline pt-3">
@@ -1005,22 +1008,5 @@
 <script type="text/javascript" src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/plugins.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        var addToCartButtons = document.querySelectorAll('.add-to-cart-button');
-
-        console.log("Found " + addToCartButtons.length + " 'Add to Cart' buttons");
-
-        addToCartButtons.forEach(function(button) {
-            button.addEventListener('click', function(e) {
-                e.preventDefault();
-                var productId = this.getAttribute('data-product-id');
-                console.log('Product added to cart: ' + productId);
-                // Here you can add code to handle adding the product to the cart
-            });
-        });
-    });
-</script>
-
 </body>
 </html>

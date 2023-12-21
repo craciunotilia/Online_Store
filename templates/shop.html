@@ -1,12 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop</title>
-</head>
-<body>
-    <h1>Welcome to the Shop!</h1>
-    <!-- Adaugă conținutul paginii de shop aici -->
-</body>
-</html>
+{% extends "Storeapp/home.html" %}
+
+{% block content %}
+  <h1>Welcome to the Shop!</h1>
+  <div class="products">
+    {% for product in products %}
+      <div class="product">
+        <h2>{{ product.name }}</h2>
+        <p>Price: ${{ product.price }}</p>
+        <button class="buy-button" data-product-id="{{ product.id }}">Buy</button>
+      </div>
+    {% endfor %}
+  </div>
+
+  <div class="cart">
+    <h2>Your Cart</h2>
+    <ul>
+      {% for item in cart_items %}
+        <li>
+          {{ item.product.name }} (Quantity: {{ item.quantity }})
+          <button class="add-to-cart" data-product-id="{{ item.product.id }}">Add More</button>
+          <button class="remove-from-cart" data-product-id="{{ item.product.id }}">Remove</button>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <script>
+    const buyButtons = document.querySelectorAll('.buy-button');
+    const addToCartButtons = document.querySelectorAll('.add-to-cart');
+    const removeFromCartButtons = document.querySelectorAll('.remove-from-cart');
+
+    buyButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const productId = button.getAttribute('data-product-id');
+        // Send an AJAX request to add the product to the cart
+        // You can implement this using JavaScript and Django REST framework
+      });
+    });
+
+    addToCartButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const productId = button.getAttribute('data-product-id');
+        // Send an AJAX request to add more of the same product to the cart
+      });
+    });
+
+    removeFromCartButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const productId = button.getAttribute('data-product-id');
+        // Send an AJAX request to remove the product from the cart
+      });
+    });
+  </script>
+{% endblock %}

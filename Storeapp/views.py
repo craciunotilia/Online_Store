@@ -1,15 +1,16 @@
 from django.contrib import messages
 from django.http import HttpResponse, JsonResponse
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.template import loader
-from .models import Product, ShoppingCartItem
+from .models import Product, ShoppingCartItem, CartItem
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render, redirect
+
 from .forms import CardDataForm
-from django.shortcuts import render
+
 from django.db.models import Sum
 from .forms import ContactForm
-from .models import Product
+
+from django.views import View
 
 
 def about_view(request):
@@ -35,7 +36,7 @@ def example_view(request):
 
 
 def home(request):
-    return render(request, 'home/home.html')
+    return render(request, 'Storeapp/home.html')
 
 
 def product_list(request):
@@ -53,20 +54,10 @@ def view_cart(request):
 
 @login_required
 def add_to_cart(request, product_id):
-    product = get_object_or_404(Product, pk=product_id)
-
-    existing_item = ShoppingCartItem.objects.filter(user=request.user, product=product).first()
-
-    if existing_item:
-        existing_item.quantity += 1
-        existing_item.save()
-    else:
-        ShoppingCartItem.objects.create(user=request.user, product=product, quantity=1)
-
-    # Adaugă un mesaj de confirmare
-    messages.success(request, f"{product.name} a fost adăugat în coș.")
-
-    return JsonResponse({'message': 'Product added to cart successfully.'})
+    cart = request.session.get('cart', {})
+    cart[product_id] = cart.get(product_id, 0) + 1
+    request.session['cart'] = cart
+    return redirect('some_view')
 
 
 
@@ -78,6 +69,12 @@ def remove_from_cart(request, item_id):
 # În Storeapp/views.py
 from django.shortcuts import render
 
+class CartView(View):
+    def get(self, request):
+        cart_items = CartItem.objects.filter(user=request.user)
+        return render(request, 'cart.html', {'cart_items': cart_items})
+
+
 
 
 @login_required
@@ -86,13 +83,21 @@ def cart_view(request):
     total = cart_items.aggregate(Sum('product__price'))['product__price__sum']
     return render(request, 'cart.html', {'cart_items': cart_items, 'total': total})
 
-
+def cart(request):
+    cart_items = request.session.get('cart', {})
+    # Retrieve products from database based on cart_items ids and quantities
+    # ...
+    return render(request, 'cart.html', {'cart_items': cart_items})
 
 
 
 
 from django.shortcuts import render
 from .forms import CardDataForm
+
+def home_view(request):
+    # Your code here...
+    return render(request, 'home.html')
 
 
 def card_data_view(request):

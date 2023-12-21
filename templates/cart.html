@@ -1,39 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopping Cart</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header, footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        ul li {
+            background: #fff;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 3px #ccc;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+        .btn:hover {
+            background: #555;
+        }
+        .messages {
+            padding: 10px;
+            background: #e4e4e4;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
-
 <body>
-    <h1>Your Shopping Cart</h1>
+    <header>
+        <div class="container">
+            <h1>Ministore - Shopping Cart</h1>
+        </div>
+    </header>
 
-    {% if messages %}
-        <ul class="messages">
-            {% for message in messages %}
-                <li>{{ message.message }}</li>
-            {% endfor %}
-        </ul>
-    {% endif %}
+    <div class="container">
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
 
-    {% if cart_items %}
-        <ul>
-            {% for item in cart_items %}
-                <li>{{ item.product.name }} - Quantity: {{ item.quantity }}</li>
-            {% endfor %}
-        </ul>
-    {% else %}
-        <p>Your shopping cart is empty.</p>
-    {% endif %}
+        {% if cart_items %}
+            <ul>
+                {% for item in cart_items %}
+                    <li>
+                        {{ item.product.name }} - Quantity: {{ item.quantity }}
+                        <!-- Placeholder for update/delete buttons -->
+                        <a href="#" class="btn">Update</a>
+                        <a href="#" class="btn">Delete</a>
+                    </li>
+                {% endfor %}
+            </ul>
+            <div>
+                <p>Total Price: {{ total_price }}</p>
+                <a href="{% url 'checkout_view' %}" class="btn">Proceed to Checkout</a>
+            </div>
+        {% else %}
+            <p>Your shopping cart is empty.</p>
+            <a href="{% url 'store_home' %}" class="btn">Continue Shopping</a>
+        {% endif %}
+    </div>
 
-    <a href="{% url 'storeapp' %}">Continue Shopping</a>
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Ministore</p>
+        </div>
+    </footer>
 </body>
-
 </html>
-
-
-
-
